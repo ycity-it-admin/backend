@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ycity-app
+  labels:
+    app: ycity-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ycity-app
+  template:
+    metadata:
+      labels:
+        app: ycity-app
+    spec:
+      containers:
+      - name: ycity-container
+        image: 018732521632.dkr.ecr.us-east-1.amazonaws.com/ycity/test:latest
+        ports:
+        - containerPort: 3000  # Update this if your app runs on a different port
+      imagePullSecrets:
+      - name: ecr-secret  # Reference the secret created earlier

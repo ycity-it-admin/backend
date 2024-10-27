@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ycity-container
-        image: 018732521632.dkr.ecr.us-east-1.amazonaws.com/ycity/test:latest
+        image: 018732521632.dkr.ecr.us-east-1.amazonaws.com/ycity/test:123
         ports:
         - containerPort: 3000  # Update this if your app runs on a different port
       imagePullSecrets:
